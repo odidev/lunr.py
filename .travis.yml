@@ -1,0 +1,11 @@
+language: python
+matrix:
+    include:
+        - python: 3.8
+          arch: arm64
+sudo: false
+# running in the container-based infrastructure without access to sudo
+install:
+    - python setup.py install 
+script:
+    - tox -e py38
